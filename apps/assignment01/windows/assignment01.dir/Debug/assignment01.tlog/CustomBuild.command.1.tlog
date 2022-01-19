@@ -1,0 +1,10 @@
+^C:\USERS\ERIC\CS372 PROJECTS\CS372.MILLER.E.SP2022V2\APPS\ASSIGNMENT01\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/Eric/CS372 Projects/cs372.Miller.E.sp2022v2/apps/assignment01" "-BC:/Users/Eric/CS372 Projects/cs372.Miller.E.sp2022v2/apps/assignment01/windows" --check-stamp-file "C:/Users/Eric/CS372 Projects/cs372.Miller.E.sp2022v2/apps/assignment01/windows/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
