@@ -1,3 +1,7 @@
 # ninja log v5
-0	302	6642643931716220	CMakeFiles/assignment01.dir/assignment01.obj	269463f0d87dbbc3
-303	630	6642643934758089	assignment01.exe	be2be8e8380d1b32
+0	301	6642745935258767	CMakeFiles/assignment01.dir/assignment01.obj	269463f0d87dbbc3
+301	439	6642745936425643	assignment01.exe	be2be8e8380d1b32
+1	435	6642746329244711	CMakeFiles/assignment01.dir/assignment01.obj	269463f0d87dbbc3
+435	607	6642746330690837	assignment01.exe	be2be8e8380d1b32
+0	438	6642746714932844	CMakeFiles/assignment01.dir/assignment01.obj	269463f0d87dbbc3
+439	594	6642746716279239	assignment01.exe	be2be8e8380d1b32
