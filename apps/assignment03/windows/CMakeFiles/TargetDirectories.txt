@@ -1,0 +1,3 @@
+C:/Users/Eric/CS372 Projects/cs372.Miller.E.sp2022v2/apps/assignment03/windows/CMakeFiles/assignment03.dir
+C:/Users/Eric/CS372 Projects/cs372.Miller.E.sp2022v2/apps/assignment03/windows/CMakeFiles/ALL_BUILD.dir
+C:/Users/Eric/CS372 Projects/cs372.Miller.E.sp2022v2/apps/assignment03/windows/CMakeFiles/ZERO_CHECK.dir
