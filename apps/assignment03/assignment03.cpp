@@ -1,6 +1,6 @@
 // Implementation of the List class and CircularList class
 // to test their functionality.
-//
+// Eric Miller
 
 
 #include "List.h"
@@ -12,7 +12,7 @@ using namespace std;
 
 int main() {
 	// Variables
-	string word;
+	int num;
 	string name;
 	int listCount;
 	int start;
@@ -27,12 +27,12 @@ int main() {
 
 	for (int count = 0; count < listCount; count++) {
 		cout << "Please enter a word to add to the list: ";
-		cin >> word;
+		cin >> num;
 		if (count == 0) {
-			l.push_front(word);
+			l.push_front(num);
 		}
 		else {
-			l.push_back(word);
+			l.push_back(num);
 		}
 	}
 
