@@ -105,10 +105,10 @@ public:
             exit(1);
         }
     }
-    void traverse(void (*doIt)(T data)) {
+    void traverse (T data) {
         Node* current = head;
         while (current != nullptr) {
-            doIt(current->data);
+            cout << current->data << endl;
             current = current->next;
         }
     }
