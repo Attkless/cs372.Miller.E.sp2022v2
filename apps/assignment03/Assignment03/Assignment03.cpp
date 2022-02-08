@@ -1,7 +1,7 @@
 ﻿// Implementation of the List class and CircularList class
 // to test their functionality.
 // Eric Miller
-
+// Sample code provided by Dr Lewis
 
 #include "list.h"
 #include "circular_list.h"
