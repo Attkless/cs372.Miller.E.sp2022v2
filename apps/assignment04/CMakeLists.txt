@@ -11,6 +11,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 include_directories(../../include)
 
 # Add source to this project's executable.
-add_executable (assignment04 "assignment04.cpp" "assignment04.h" "stack.h")
+add_executable (assignment04 "assignment04.cpp")
 
 # TODO: Add tests and install targets if needed.
