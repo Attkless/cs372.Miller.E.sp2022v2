@@ -1,93 +1,64 @@
-﻿#include <iostream>
-#include <string>
-#include <list>
+﻿// Key Word In Context 
+// Eric Miller
+
+#include <iostream>
+#include <vector>
 #include <sstream>
-#include <fstream>
 #include <algorithm>
+#include <fstream>
 
 using namespace std;
 
-list<string> wordList;
+string getInputFromFile(const string& filename) {
+    ifstream inf;
+    inf.open(filename);
+    string line;
+    string text; 
+    while (inf) {
+        getline(inf, line);
+        text += line;
+    }
+    return text;
+}
 
-class stringContext
-{
-private:
-	string values;
-public:
-	stringContext()
-	{
-		values = "";
-	}
+vector<string> KWIC(const string& text, const string& key) {
+    vector<string> res; 
+    vector<string> data; 
+    vector<int> idx; 
 
-	string getStringValue()
-	{
-		return values;
-	}
+    stringstream ss(text);
 
-	void setStringValues(string context)
-	{
-		values = context;
-	}
+    string token;
+    while (getline(ss, token, ' ')) {
+        for (auto& c : token) {
+            c = toupper(c);
+        }
+        data.push_back(token);
+        if (key == token) {
+            idx.push_back(data.size() - 1);
+        }
+    }
 
-};
+    int n = data.size();
+    for (int id : idx) {
+        string s;
+        for (int j = id - 3; j <= min(n - 1, id + 3); j++) {
+            s += data[j] + ' ';
+        }
+        res.push_back(s);
+    }
+    sort(begin(res), end(res));
+    return res;
+}
 
 int main() {
-	string context; 
-	string keyword;  
-	string line;
-	string words[100];
-	string word;
-
-	int count;
-	int i;
-	char ch;
-
-		stringContext strings[30];
-		count = 0;
-
-		ifstream inf;
-		inf.open("test.txt");
-
-		if (inf) {
-			
-			cout << "Enter the keyword: ";
-			cin >> keyword;
-			
-			while (!inf.eof()) {
-				
-				getline(inf, line);
-				i = 0;
-				
-				stringstream ss(line);
-				while (ss >> word) {
-					
-					wordList.push_back(word);
-				}
-				
-				for (int j = 0; j < i; j++) {
-					if (words[j].compare(keyword) == 0) {
-						context = "";
-						context += words[j - 2] + " ";
-						context += words[j - 1] + " ";
-						context += words[j] + " ";
-						context += words[j + 1] + " ";
-						context += words[j + 2] + " ";
-						strings[count].setStringValues(context);
-					}
-				}
-				count++;
-			}
-			
-			for (int l = 0; l < count; l++) {
-				cout << " \"" << strings[l].getStringValue() << "\"" << endl;
-			}
-		}
-		else {
-			cout << "\nSorry! Unable to open the file." << endl;
-		}
-	
-		inf.close();
-		
-	system("pause");
-	return 0;
+    string keyword;
+    string text = getInputFromFile("test.txt");
+    cout << "Enter the keyword you want to find: ";
+    cin >> keyword;
+    vector<string> res = KWIC(text, keyword);
+    for (string& s : res) {
+        cout << s << endl;
+    }
+    return 0;
 }
