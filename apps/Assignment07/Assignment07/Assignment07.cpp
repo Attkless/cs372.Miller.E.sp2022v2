@@ -30,6 +30,7 @@
 #include <chrono> 
 #include <cmath>
 #include <vector>
+#include <iomanip>
 
 using namespace std::chrono;
 using namespace std;
@@ -45,17 +46,43 @@ int anyEqual(int n, int A[][1000]) {
 	return 0;
 }
 
-void generateArrayTen() {
-	int a[10];
-	auto start = high_resolution_clock::now();
-
-	for (int i = 0; i < 10; i++)
-		a[i] = i;
-	auto end = high_resolution_clock::now();
-	auto duration = duration_cast<milliseconds>(end - start);
-	cout << "Time taken by function: " << duration.count() << endl; 
+void generateArray(int a[], int size) {
+	double average = 0;
+	double sum = 0;
+	auto start = steady_clock::now();
+	int random = 20;
+	for (int i = 0; i < size; i++)
+		for (int j = 0; j < random; j++)
+			a[i] = (rand() % random);
+	auto end = steady_clock::now();
+	duration<double> elapsed_seconds = end - start;
+	sum = sum + elapsed_seconds.count();
+	cout << "Time taken by function: " << size << " " << (sum / random) << endl;
 }
 
 int main() { 
-	generateArrayTen();
+	const int SIZE1 = 10; 
+	const int SIZE2 = 20;
+	const int SIZE3 = 30;
+	const int SIZE4 = 40; 
+	const int SIZE5 = 50;
+	const int SIZE6 = 100;
+	const int SIZE7 = 500;
+	const int SIZE8 = 1000;
+	int myList1[SIZE1];
+	int myList2[SIZE2];
+	int myList3[SIZE3];
+	int myList4[SIZE4];
+	int myList5[SIZE5];
+	int myList6[SIZE6];
+	int myList7[SIZE7];
+	int myList8[SIZE8];
+	generateArray(myList1, SIZE1);
+	generateArray(myList2, SIZE2);
+	generateArray(myList3, SIZE3);
+	generateArray(myList4, SIZE4);
+	generateArray(myList5, SIZE5);
+	generateArray(myList6, SIZE6);
+	generateArray(myList7, SIZE7);
+	generateArray(myList8, SIZE8);
 }
