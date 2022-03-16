@@ -1,0 +1,1 @@
+The Big-Oh of the algorithm is that the higher the number of elements needed in an array increases the time drastically. You can see this based upon the algorithm's time increasing drastically close to around 40 elements in an array. 
