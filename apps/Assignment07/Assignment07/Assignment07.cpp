@@ -32,18 +32,6 @@
 using namespace std;
 using namespace std::chrono;
 
-// int n = the size of the array being passed in 
-/*int anyEqualTen(int n, int A[][10]) {
-    int i, j, k, m;
-    for (i = 1; i <= n; i++)
-        for (j = 1; j <= n; j++)
-            for (k = 1; k <= n; k++)
-                for (m = 1; m <= n; m++)
-                     if (A[i][j] == A[k][m] && !(i == k && j == m))
-                        return 1;
-    return 0;
-}
-*/
 void generateArrayTen(int array[][10], int size) {
     double average = 0; 
     double sum = 0; 
@@ -51,12 +39,27 @@ void generateArrayTen(int array[][10], int size) {
     int count = 0; 
     int random = 20;
     while (count < 20) {
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                array[i][j] = (rand() % random);
-                cout << array[i][j] << endl;
+        int i, j, k, m;
+        for (i = 1; i <= size; i++) {
+            for (j = 1; j <= size; j++) {
+                for (k = 1; k <= size; k++) {
+                    for (m = 1; m <= size; m++) {
+                        if (array[i][j] == array[k][m] && !(i == k && j == m)) {
+                            array[i][j] = 1;
+                        }
+                        else
+                            array[i][j] = 0;
+                    }
+                }
             }
         }
+        /*
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                //array[i][j] = (rand() % random);
+                cout << array[i][j] << endl;
+            }
+        }*/
         auto end = steady_clock::now();
         duration<double> elapsed_seconds = end - start;
         sum = sum + elapsed_seconds.count();
@@ -72,11 +75,26 @@ void generateArrayTwenty(int array[][20], int size) {
     int count = 0;
     int random = 20;
     while (count < 20) {
+        int i, j, k, m;
+        for (i = 1; i <= size; i++) {
+            for (j = 1; j <= size; j++) {
+                for (k = 1; k <= size; k++) {
+                    for (m = 1; m <= size; m++) {
+                        if (array[i][j] == array[k][m] && !(i == k && j == m)) {
+                            array[i][j] = 1;
+                        }
+                        else
+                            array[i][j] = 0;
+                    }
+                }
+            }
+        }
+        /*
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 array[i][j] = (rand() % random);
             }
-        }
+        }*/
         auto end = steady_clock::now();
         duration<double> elapsed_seconds = end - start;
         sum = sum + elapsed_seconds.count();
@@ -93,11 +111,26 @@ void generateArrayThirty(int array[][30], int size) {
     int count = 0;
     int random = 20;
     while (count < 20) {
+        int i, j, k, m;
+        for (i = 1; i <= size; i++) {
+            for (j = 1; j <= size; j++) {
+                for (k = 1; k <= size; k++) {
+                    for (m = 1; m <= size; m++) {
+                        if (array[i][j] == array[k][m] && !(i == k && j == m)) {
+                            array[i][j] = 1;
+                        }
+                        else
+                            array[i][j] = 0;
+                    }
+                }
+            }
+        }
+        /*
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 array[i][j] = (rand() % random);
             }
-        }
+        }*/
         auto end = steady_clock::now();
         duration<double> elapsed_seconds = end - start;
         sum = sum + elapsed_seconds.count();
@@ -113,11 +146,27 @@ void generateArrayFourty(int array[][40], int size) {
     int count = 0;
     int random = 20;
     while (count < 20) {
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                array[i][j] = (rand() % random);
+        int i, j, k, m;
+        for (i = 1; i <= size; i++) {
+            for (j = 1; j <= size; j++) {
+                for (k = 1; k <= size; k++) {
+                    for (m = 1; m <= size; m++) {
+                        if (array[i][j] == array[k][m] && !(i == k && j == m)) {
+                            array[i][j] = 1;
+                        }
+                        else
+                            array[i][j] = 0;
+                    }
+                }
             }
         }
+        /*
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                //array[i][j] = (rand() % random);
+                cout << array[i][j] << endl;
+            }
+        }*/
         auto end = steady_clock::now();
         duration<double> elapsed_seconds = end - start;
         sum = sum + elapsed_seconds.count();
@@ -133,11 +182,26 @@ void generateArrayFifty(int array[][50], int size) {
     int count = 0;
     int random = 20;
     while (count < 20) {
+        int i, j, k, m;
+        for (i = 1; i <= size; i++) {
+            for (j = 1; j <= size; j++) {
+                for (k = 1; k <= size; k++) {
+                    for (m = 1; m <= size; m++) {
+                        if (array[i][j] == array[k][m] && !(i == k && j == m)) {
+                            array[i][j] = 1;
+                        }
+                        else
+                            array[i][j] = 0;
+                    }
+                }
+            }
+        }
+        /*
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 array[i][j] = (rand() % random);
             }
-        }
+        }*/
         auto end = steady_clock::now();
         duration<double> elapsed_seconds = end - start;
         sum = sum + elapsed_seconds.count();
@@ -153,11 +217,26 @@ void generateArrayOneHundred(int array[][100], int size) {
     int count = 0;
     int random = 20;
     while (count < 20) {
+        int i, j, k, m;
+        for (i = 1; i <= size; i++) {
+            for (j = 1; j <= size; j++) {
+                for (k = 1; k <= size; k++) {
+                    for (m = 1; m <= size; m++) {
+                        if (array[i][j] == array[k][m] && !(i == k && j == m)) {
+                            array[i][j] = 1;
+                        }
+                        else
+                            array[i][j] = 0;
+                    }
+                }
+            }
+        }
+        /*
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 array[i][j] = (rand() % random);
             }
-        }
+        }*/
         auto end = steady_clock::now();
         duration<double> elapsed_seconds = end - start;
         sum = sum + elapsed_seconds.count();
@@ -173,11 +252,26 @@ void generateArrayFiveHundred(int array[][500], int size) {
     int count = 0;
     int random = 20;
     while (count < 20) {
+        int i, j, k, m;
+        for (i = 1; i <= size; i++) {
+            for (j = 1; j <= size; j++) {
+                for (k = 1; k <= size; k++) {
+                    for (m = 1; m <= size; m++) {
+                        if (array[i][j] == array[k][m] && !(i == k && j == m)) {
+                            array[i][j] = 1;
+                        }
+                        else
+                            array[i][j] = 0;
+                    }
+                }
+            }
+        }
+        /*
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 array[i][j] = (rand() % random);
             }
-        }
+        }*/
         auto end = steady_clock::now();
         duration<double> elapsed_seconds = end - start;
         sum = sum + elapsed_seconds.count();
@@ -193,11 +287,27 @@ void generateArrayOneThousand(int array[][1000], int size) {
     int count = 0;
     int random = 20;
     while (count < 20) {
+        int i, j, k, m;
+        for (i = 1; i <= size; i++) {
+            for (j = 1; j <= size; j++) {
+                for (k = 1; k <= size; k++) {
+                    for (m = 1; m <= size; m++) {
+                        if (array[i][j] == array[k][m] && !(i == k && j == m)) {
+                            array[i][j] = 1;
+                        }
+                        else
+                            array[i][j] = 0;
+                    }
+                }
+            }
+        }
+        /*
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 array[i][j] = (rand() % random);
+                
             }
-        }
+        }*/
         auto end = steady_clock::now();
         duration<double> elapsed_seconds = end - start;
         sum = sum + elapsed_seconds.count();
@@ -212,19 +322,21 @@ int main()
     const int SIZE1 = 10;
     const int SIZE2 = 20;
     const int SIZE3 = 30;
-    const int SIZE4 = 40; 
+    const int SIZE4 = 40;
     const int SIZE5 = 50;
     const int SIZE6 = 100;
     const int SIZE7 = 500;
     const int SIZE8 = 1000;
-    int array[10][10];
-    int array2[SIZE2][SIZE2];
-    int array3[SIZE3][SIZE3];
-    int array4[SIZE4][SIZE4];
-    int array5[SIZE5][SIZE5];
-    int array6[SIZE6][SIZE6];
-    int array7[SIZE7][SIZE7];
-    int array8[SIZE8][SIZE8]; 
+
+    int(*array)[10] = new int[10][10];
+    int(*array2)[20] = new int[20][20];
+    int(*array3)[30] = new int[30][30];
+    int(*array4)[40] = new int[40][40];
+    int(*array5)[50] = new int[50][50];
+    int(*array6)[100] = new int[100][100];
+    int(*array7)[500] = new int[500][500];
+    int(*array8)[1000] = new int[1000][1000];
+
     generateArrayTen(array, 10);
     generateArrayTwenty(array2, SIZE2);
     generateArrayThirty(array3, SIZE3);
@@ -233,4 +345,6 @@ int main()
     generateArrayOneHundred(array6, SIZE6);
     generateArrayFiveHundred(array7, SIZE7);
     generateArrayOneThousand(array8, SIZE8);
+    return 0;
 }
+
