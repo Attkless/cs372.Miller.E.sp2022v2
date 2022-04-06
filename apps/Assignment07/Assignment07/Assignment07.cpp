@@ -35,7 +35,7 @@ using namespace std::chrono;
 void generateArrayTen(int array[][10], int size) {
     double average = 0; 
     double sum = 0; 
-    auto start = steady_clock::now(); 
+    auto start = steady_clock::now();
     int count = 0; 
     int random = 20;
     while (count < 20) {
